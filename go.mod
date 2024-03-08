@@ -1,4 +1,4 @@
-module github.com/mschnk/goServer.git
+module github.com/mschnk/goServer
 
 go 1.22.0
 

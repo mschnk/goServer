@@ -1,8 +1,10 @@
 package models
 
 import (
+	_ "github.com/lib/pq"
 	"github.com/mschnk/goServer/db"
-	_ "github.com/lib/pq")
+	_ "github.com/mschnk/goServer/db"
+)
 
 type Produto struct {
 	Nome       string
@@ -12,7 +14,7 @@ type Produto struct {
 }
 
 func BuscaTodosOsProdutos() []Produto {
-		db := ConectaComBancoDeDados()
+		db := db.ConectaComBancoDeDados()
 		selectDeTodosOsProdutos, err := db.Query("select * from produtos")
 		if err != nil {
 			panic(err.Error())
