@@ -5,6 +5,6 @@ import ("net/http"
 
 
 func CarregaRotas() {
-	http.HandleFunc("/", index)
-
+	http.HandleFunc("/", controllers.Index)
+	http.HandleFunc("/new", controllers.New)
 }
